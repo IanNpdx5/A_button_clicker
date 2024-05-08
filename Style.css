@@ -1,1 +1,49 @@
-/* put your css here */
+ body {
+                font-family: "Orbitron", Arial, sans-serif;
+                background-color: black;
+                color: white;
+            }
+            #page {
+                position: absolute;
+                width: 300px;
+                top: 15px;
+            }
+            #buttondiv {
+                width: 100px;
+                height: 100px;
+                padding: 10px;
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                border: dashed;
+                border-color: gray;
+            }
+            #buttondiv button {
+                width: 50px;
+                position: absolute;
+                left: 30px;
+                top: 20px;
+            }
+            #buttondiv h3 {
+                position: absolute;
+                top: 50px;
+                left: 15px;
+            }
+            #count {
+                position: absolute;
+                left: 20px;
+                top: 70px;
+            }
+            #shop {
+                position: absolute;
+                left: 450px;
+                top: 5px;
+                padding: 10px;
+                padding-top: 0px;
+                padding-left: 20px;
+                border: dashed;
+                border-color: gray;
+                height: 340px;
+                width: 83px;
+                overflow: auto;
+            }
