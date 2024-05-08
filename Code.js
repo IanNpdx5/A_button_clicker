@@ -1,4 +1,4 @@
-var amount = 1;
+   var amount = 1;
    var count = 0;
    var up1p = 10;
    var up2p = 50;
@@ -31,20 +31,6 @@ var amount = 1;
 
    $up2.on("click", function() {sBOnClick(up2p, 2);});
 
-   $up3.on("click", function() {
-       if (count >= up3p) {
-           count -= up3p;
-           amount += 5;
-       } else {
-           return;
-       }
-   });
+   $up3.on("click", function() {sBOnClick(up3p, 5);});
 
-   $up4.on("click", function() {
-       if (count >= up4p) {
-           count -= up4p;
-           amount += 10;
-       } else {
-           return;
-       }
-   });
+   $up4.on("click", function() {sBOnClick(up4p, 10);});
