@@ -19,6 +19,7 @@
                 border-color: gray;
             }
             #buttondiv button {
+                font-family: "Orbitron", Arial, sans-serif;
                 width: 50px;
                 position: absolute;
                 left: 30px;
