@@ -1,4 +1,4 @@
-var amount = 1;
+   var amount = 1;
    var count = 0;
    var tc = 0;
    var bp = 0;
