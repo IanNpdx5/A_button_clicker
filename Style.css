@@ -10,7 +10,7 @@
                 top: 10px;
             }
             #buttondiv {
-                width: 400px;
+                width: 380px;
                 height: 150px;
                 padding: 10px;
                 position: absolute;
@@ -42,7 +42,7 @@
             }
             #shop {
                 position: absolute;
-                left: 450px;
+                left: 430px;
                 top: 5px;
                 padding: 10px;
                 padding-top: 0px;
@@ -50,14 +50,17 @@
                 border: dashed;
                 border-color: gray;
                 height: 355px;
-                width: 83px;
+                width: 110px;
                 overflow: auto;
+            }
+            #shop button {
+                font-family: "Orbitron", Arial, sans-serif;
             }
             #info {
                 position: absolute;
                 left: 10px;
                 top: 190px;
-                width: 400px;
+                width: 380px;
                 height: 160px;
                 border: dashed;
                 border-color: gray;
