@@ -8,11 +8,13 @@
                 position: absolute;
                 width: 300px;
                 top: 10px;
+                left: 10px;
             }
             #buttondiv {
-                width: 380px;
-                height: 150px;
-                padding: 10px;
+                width: 350px;
+                height: 110px;
+                padding: 20px;
+                padding-bottom: 45px;
                 position: absolute;
                 left: 10px;
                 top: 5px;
@@ -40,30 +42,50 @@
                 left: 20px;
                 top: 70px;
             }
-            #shop {
+            #shop  {
                 position: absolute;
-                left: 430px;
+                left: 420px;
                 top: 5px;
                 padding: 10px;
                 padding-top: 0px;
                 padding-left: 20px;
+                padding-bottom: 0px;
                 border: dashed;
                 border-color: gray;
-                height: 355px;
-                width: 110px;
+                height: 375px;
+                width: 320px;
                 overflow: auto;
+                font-size: 0.96em;
+            }
+            #rightShop {
+                position: absolute;
+                left: 200px;
+                top: 0px;
+                padding-left: 10px;
+                width: 140px;
             }
             #shop button {
                 font-family: "Orbitron", Arial, sans-serif;
+                width: 120px;
+                position: absolute;
+                left: 15px;
+            }
+            #shop h3 {
+                font-size: 1.5em;
+            }
+            #shop p {
+                font-size: 1.1em;
             }
             #info {
                 position: absolute;
                 left: 10px;
-                top: 190px;
-                width: 380px;
-                height: 160px;
+                top: 200px;
+                width: 330px;
+                height: 180px;
                 border: dashed;
                 border-color: gray;
                 overflow: auto;
-                padding: 10px;
+                padding: 30px;
+                padding-top: 0px;
+                padding-bottom: 0px;
             }
