@@ -9,10 +9,10 @@
    var up4p = 1000;  var up4a = 100;
    var up5p = 5000;  var up5a = 500;
    var up6p = 100;   var up6a = 1;
-   var up7p = 100;   var up7a = 5;
-   var up8p = 500;   var up8a = 10;
-   var up9p = 1000;  var up9a = 50;
-   var up10p = 5000;  var up10a = 100;
+   var up7p = 500;   var up7a = 5;
+   var up8p = 1000;  var up8a = 10;
+   var up9p = 5000;  var up9a = 50;
+   var up10p = 10000;var up10a = 100;
    var $b = $("#clickerButton");
    var $up1 = $("#up1");
    var $up2 = $("#up2");
