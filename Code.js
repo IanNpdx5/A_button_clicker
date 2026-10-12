@@ -24,11 +24,12 @@ $(function () {
     $("#presses").text("Total presses: " + state.presses);
 
     upgrades.forEach(function (u) {
+      var affordable = state.count >= u.price;
       $(u.id)
-        .text(u.price + " clicks")
-        .prop("disabled", state.count < u.price);
+        .html('<span class="cost">' + u.price.toLocaleString() + '</span> clicks')
+        .prop("disabled", !affordable)
+        .toggleClass("affordable", affordable);
     });
-  }
 
   $("#clickerButton").on("click", function () {
     state.count += state.perClick;
