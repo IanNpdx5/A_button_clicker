@@ -1,25 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Orbitron", Arial, sans-serif;
     background-color: black;
     color: white;
     font-size: 0.8em;
+    margin: 0;
 }
 
 #page {
-    position: absolute;
-    width: 300px;
-    top: 10px;
-    left: 10px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+    grid-template-rows: minmax(360px, 60vh) auto;
+    gap: 16px;
+    padding: 16px;
 }
 
 #buttondiv {
-    width: auto;
-    height: auto;
-    padding: 20px;
-    padding-bottom: 45px;
-    position: absolute;
-    left: 10px;
-    top: 5px;
+    position: relative;
+    min-width: 0;
+    min-height: 0;
     border: dashed;
     border-color: gray;
     font-size: 1.2em;
@@ -28,48 +31,35 @@ body {
 
 #buttondiv button {
     font-family: "Orbitron", Arial, sans-serif;
-    width: 100px;
-    height: 100px;
+    width: clamp(180px, 24vw, 400px);
+    height: clamp(180px, 24vw, 400px);
     position: absolute;
-    left: 150px;
-    top: 20px;
-    font-size: 2em;
-}
-
-#buttondiv h3 {
-    position: absolute;
-    top: 120px;
-    left: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.7rem, 4vw, 4rem);
 }
 
 #count {
     position: absolute;
-    left: 20px;
-    top: 70px;
+    left: 16px;
+    top: 8px;
 }
 
 #shop {
-    position: absolute;
-    left: 420px;
-    top: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    min-width: 0;
     padding: 10px;
-    padding-top: 0px;
-    padding-left: 20px;
-    padding-bottom: 0px;
     border: dashed;
     border-color: gray;
-    height: 375px;
-    width: 320px;
     overflow: auto;
     font-size: 0.96em;
 }
 
 #rightShop {
-    position: absolute;
-    left: 200px;
-    top: 0px;
-    padding-left: 10px;
-    width: 140px;
+    min-width: 0;
 }
 
 #shop h3 {
@@ -81,17 +71,23 @@ body {
 }
 
 #info {
-    position: absolute;
-    left: 10px;
-    top: 200px;
-    width: 330px;
-    height: 180px;
+    grid-column: 1 / -1;
+    min-width: 0;
     border: dashed;
     border-color: gray;
     overflow: auto;
-    padding: 30px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0 20px;
+}
+
+@media (max-width: 700px) {
+    #page {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(320px, 55vh) auto auto;
+    }
+
+    #info {
+        grid-column: auto;
+    }
 }
 
 /* ---- Shop buttons ---- */

@@ -1,5 +1,6 @@
 $(function () {
   var state = { count: 0, totalClicks: 0, presses: 0, perClick: 1, perSecond: 0 };
+  var SAVE_KEY = "buttonClickerSave";
 
   // type: "pc" = per click, "ps" = per second
   var upgrades = [
@@ -15,6 +16,43 @@ $(function () {
     { id: "#up10", price: 10000, amount: 100, type: "ps" }
   ];
   var PRICE_GROWTH = 1.15; // set to 1 to keep your original fixed prices
+
+  function saveGame() {
+    try {
+      localStorage.setItem(SAVE_KEY, JSON.stringify({
+        version: 1,
+        state: state,
+        prices: upgrades.map(function (u) { return u.price; })
+      }));
+    } catch (error) {
+      // The game remains playable if browser storage is unavailable.
+    }
+  }
+
+  function loadGame() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(SAVE_KEY));
+      if (!saved || saved.version !== 1 || !saved.state) return;
+
+      ["count", "totalClicks", "presses", "perClick", "perSecond"].forEach(function (key) {
+        var value = saved.state[key];
+        if (typeof value === "number" && Number.isFinite(value) && value >= 0) {
+          state[key] = key === "perClick" ? Math.max(1, value) : value;
+        }
+      });
+
+      if (Array.isArray(saved.prices)) {
+        upgrades.forEach(function (u, index) {
+          var price = saved.prices[index];
+          if (typeof price === "number" && Number.isFinite(price) && price >= 1) {
+            u.price = price;
+          }
+        });
+      }
+    } catch (error) {
+      // Ignore invalid or unavailable saves and start a fresh game.
+    }
+  }
 
   function render() {
     $("#count").text("Clicks: " + state.count);
@@ -37,6 +75,7 @@ $(function () {
     state.totalClicks += state.perClick;
     state.presses++;
     render();
+    saveGame();
   });
 
   upgrades.forEach(function (u) {
@@ -47,6 +86,7 @@ $(function () {
       else state.perSecond += u.amount;
       u.price = Math.ceil(u.price * PRICE_GROWTH);
       render();
+      saveGame();
     });
   });
 
@@ -55,7 +95,10 @@ $(function () {
     state.count += state.perSecond;
     state.totalClicks += state.perSecond;
     render();
+    saveGame();
   }, 1000);
 
+  loadGame();
+  window.addEventListener("pagehide", saveGame);
   render();
 });
