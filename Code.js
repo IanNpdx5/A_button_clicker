@@ -64,7 +64,7 @@ $(function () {
     upgrades.forEach(function (u) {
       var affordable = state.count >= u.price;
       $(u.id)
-        .html('<span class="cost">' + u.price.toLocaleString() + '</span> clicks')
+        .html('<span class="cost">' + u.price.toLocaleString() + '</span> Clicks')
         .prop("disabled", !affordable)
         .toggleClass("affordable", affordable);
     });
