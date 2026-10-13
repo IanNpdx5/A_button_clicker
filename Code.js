@@ -30,6 +30,7 @@ $(function () {
         .prop("disabled", !affordable)
         .toggleClass("affordable", affordable);
     });
+  }
 
   $("#clickerButton").on("click", function () {
     state.count += state.perClick;
