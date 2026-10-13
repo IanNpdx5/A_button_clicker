@@ -5,10 +5,6 @@ body {
     font-size: 0.8em;
 }
 
-button {
-    font-family: inherit;
-}
-
 #page {
     position: absolute;
     width: 300px;
@@ -86,4 +82,45 @@ button {
 
 #info {
     position: absolute;
-    left:
+    left: 10px;
+    top: 200px;
+    width: 330px;
+    height: 180px;
+    border: dashed;
+    border-color: gray;
+    overflow: auto;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* ---- Shop buttons ---- */
+#shop button {
+    font-family: "Orbitron", Arial, sans-serif;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border: 2px solid #888;
+    background: #222;
+    color: #fff;
+    white-space: nowrap;
+}
+
+#shop button .cost {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* can't afford: muted border/background, text stays readable */
+#shop button:disabled {
+    border-color: #555;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* can afford: obvious highlight */
+#shop button.affordable {
+    border-color: #3ddc84;
+    color: #3ddc84;
+    cursor: pointer;
+}
