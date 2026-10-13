@@ -5,6 +5,10 @@ body {
     font-size: 0.8em;
 }
 
+button {
+    font-family: inherit;
+}
+
 #page {
     position: absolute;
     width: 300px;
@@ -13,8 +17,8 @@ body {
 }
 
 #buttondiv {
-    width: 350px;
-    height: 110px;
+    width: auto;
+    height: auto;
     padding: 20px;
     padding-bottom: 45px;
     position: absolute;
